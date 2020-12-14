@@ -312,7 +312,7 @@ fn delete_image(image_id: &str) -> io::Result<()> {
 
     // Tell Docker to delete the image.
     let mut child = Command::new("docker")
-        .args(&["image", "rm", "--force", "--no-prune", image_id])
+        .args(&["image", "rm", "--no-prune", image_id])
         .spawn()?;
 
     // Ensure the command succeeded.
